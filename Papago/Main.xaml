@@ -59,7 +59,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Word</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="메인" sap2010:WorkflowViewState.IdRef="Sequence_23">
@@ -86,7 +85,8 @@
           </ActivityAction>
         </ui:OpenBrowser.Body>
       </ui:OpenBrowser>
-      <p:WordApplicationScope DisplayName="워드 문서 제목 입력" FilePath="Forward Kickoff Workstream leads 7-24-19V2.doc" sap2010:WorkflowViewState.IdRef="WordApplicationScope_5">
+      <ui:CopyFile ContinueOnError="{x:Null}" Destination="Result.doc" DisplayName="Copy File" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="Forward Kickoff Workstream leads 7-24-19V2.doc" />
+      <p:WordApplicationScope DisplayName="워드 문서 제목 입력" FilePath="Result.doc" sap2010:WorkflowViewState.IdRef="WordApplicationScope_5">
         <p:WordApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WordDocument">
             <ActivityAction.Argument>
@@ -415,7 +415,7 @@
         </p:WordApplicationScope.Body>
       </p:WordApplicationScope>
     </Sequence>
-    <sads:DebugSymbol.Symbol>dy9DOlxVc2Vyc1xVU0VSXERvY3VtZW50c1xVaVBhdGhcUGFwYWdvXE1haW4ueGFtbGhBA6MDDgIBAUUFoQMQAgECSTVJOAIBA00HWBgCAXdZB6ADIAIBBE20AU3oAQIBelMNVRgCAXhZQllyAgF2Xw2dAxgCAQVUD1SHAQIBeWAPYHoCAXNhD2gYAgFvaQ9wGAIBa3EPdR8CAWh2D5wDHAIBBmBtYHcCAXRmPGaOAQIBcmM9Y0cCAXBuPG56AgFuaz1rRAIBbHOiAXPbAQIBanHxAXH0AQIBaXaaAXajAQIBZnwVmQMgAgEHfRfcAiICARfdAhfkAiACARLlAheYAyICAQh+GdsCKwIBGOICQeICTAIBFd8CQt8CSQIBE+YCGfQCJAIBEPUCGfkCJwIBDfoCGYgDJAIBC4kDGZcDJAIBCX6tAn7MAgIBZYQBH9gCKgIBGfICrAHyAssCAgER9wKsAfcCmwICAQ/1AqgC9QKrAgIBDoYDrAGGA84CAgEMlQOsAZUDzAICAQqFASGJAS8CAWCKASGRASwCAVySASGWATECAVqXASGXAYgBAgFYmAEhnwE1AgFUoAEhrgEsAgFSrwEhswEvAgFNtAEhuAEvAgFJuQEhxwEsAgFHyAEh1gEsAgFF1wEh1wIsAgEahwG0AYcB5QECAWSFAawChQG8AgIBYY8BtAGPAeUBAgFfjAFOjAFTAgFejAFAjAFFAgFdkgGAApIBhwICAVuXAVGXAVsCAVmaAbQBmgHgAQIBV50BTZ0BWAIBVawBtAGsAYEEAgFTsQG0AbEBowICAVGvAa8CrwG/AgIBTrYBtAG2AaMCAgFMtAGvArQBvAICAUrFAbQBxQHZAgIBSNQBtAHUAdcCAgFG3wEj4wE4AgFA5AEj9gEoAgE79wEj+wE4AgE4/AEjjgIoAgEzjwIjkwI4AgEwlAIjpgIoAgErpwIjqwI4AgEorAIjvgIoAgEjvwIjwwI4AgEgxAIj1gIoAgEb4QGhAeEBiQICAUThAZQC4QGXAgIBQ98BYd8BawIBQeQBMeQBOwIBPOYBJ/QBMgIBPvkBoQH5AZQCAgE6+QGfAvkBogICATn8ATH8ATsCATT+ASeMAjICATaRAqEBkQKJAgIBMpEClAKRApcCAgExlAIxlAI7AgEslgInpAIyAgEuqQKhAakClAICASqpAp8CqQKiAgIBKawCMawCOwIBJK4CJ7wCMgIBJsECoQHBAokCAgEiwQKUAsEClwICASHEAjHEAjsCARzGAifUAjICAR7yAboB8gGiAgIBP4oCugGKAq0CAgE3ogK6AaICogICAS+6AroBugKtAgIBJ9ICugHSAqICAgEf</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dy9DOlxVc2Vyc1xVU0VSXERvY3VtZW50c1xVaVBhdGhcUGFwYWdvXE1haW4ueGFtbGtAA6MDDgIBAUQFoQMQAgECSDVIOAIBA0wHVxgCAXpYB1jXAQIBd1kHoAMgAgEETLQBTOgBAgF9Ug1UGAIBe1g7WEcCAXlYpAFY1AECAXhZQllOAgF2Xw2dAxgCAQVTD1OHAQIBfGAPYHoCAXNhD2gYAgFvaQ9wGAIBa3EPdR8CAWh2D5wDHAIBBmBtYHcCAXRmPGaOAQIBcmM9Y0cCAXBuPG56AgFuaz1rRAIBbHOiAXPbAQIBanHxAXH0AQIBaXaaAXajAQIBZnwVmQMgAgEHfRfcAiICARfdAhfkAiACARLlAheYAyICAQh+GdsCKwIBGOICQeICTAIBFd8CQt8CSQIBE+YCGfQCJAIBEPUCGfkCJwIBDfoCGYgDJAIBC4kDGZcDJAIBCX6tAn7MAgIBZYQBH9gCKgIBGfICrAHyAssCAgER9wKsAfcCmwICAQ/1AqgC9QKrAgIBDoYDrAGGA84CAgEMlQOsAZUDzAICAQqFASGJAS8CAWCKASGRASwCAVySASGWATECAVqXASGXAYgBAgFYmAEhnwE1AgFUoAEhrgEsAgFSrwEhswEvAgFNtAEhuAEvAgFJuQEhxwEsAgFHyAEh1gEsAgFF1wEh1wIsAgEahwG0AYcB5QECAWSFAawChQG8AgIBYY8BtAGPAeUBAgFfjAFOjAFTAgFejAFAjAFFAgFdkgGAApIBhwICAVuXAVGXAVsCAVmaAbQBmgHgAQIBV50BTZ0BWAIBVawBtAGsAYEEAgFTsQG0AbEBowICAVGvAa8CrwG/AgIBTrYBtAG2AaMCAgFMtAGvArQBvAICAUrFAbQBxQHZAgIBSNQBtAHUAdcCAgFG3wEj4wE4AgFA5AEj9gEoAgE79wEj+wE4AgE4/AEjjgIoAgEzjwIjkwI4AgEwlAIjpgIoAgErpwIjqwI4AgEorAIjvgIoAgEjvwIjwwI4AgEgxAIj1gIoAgEb4QGhAeEBiQICAUThAZQC4QGXAgIBQ98BYd8BawIBQeQBMeQBOwIBPOYBJ/QBMgIBPvkBoQH5AZQCAgE6+QGfAvkBogICATn8ATH8ATsCATT+ASeMAjICATaRAqEBkQKJAgIBMpEClAKRApcCAgExlAIxlAI7AgEslgInpAIyAgEuqQKhAakClAICASqpAp8CqQKiAgIBKawCMawCOwIBJK4CJ7wCMgIBJsECoQHBAokCAgEiwQKUAsEClwICASHEAjHEAjsCARzGAifUAjICAR7yAboB8gGiAgIBP4oCugGKAq0CAgE3ogK6AaICogICAS+6AroBugKtAgIBJ9ICugHSAqICAgEf</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -428,6 +428,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414.4,52.8" />
+      <sap2010:ViewStateData Id="CopyFile_1" sap:VirtualizedContainerService.HintSize="414.4,22.4" />
       <sap2010:ViewStateData Id="WordReadText_3" sap:VirtualizedContainerService.HintSize="288.8,52.8" />
       <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="288.8,60" />
       <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="288.8,60" />
@@ -539,7 +540,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436.8,1072">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436.8,1134.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -547,14 +548,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="459.2,1196.8">
+      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="459.2,1259.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="499.2,2016.8">
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="499.2,1339.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
